@@ -1,5 +1,9 @@
 <?php
 
-interface Achievement
+class Achievement
 {
+    public function isUnlocked()
+    {
+        return true;
+    }
 }
