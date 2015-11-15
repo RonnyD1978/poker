@@ -49,7 +49,7 @@ class CardCollection
 
     public function numberOfCards()
     {
-        return count($this->cards);
+        return sizeof($this->cards);
     }
 
     public function cards()
