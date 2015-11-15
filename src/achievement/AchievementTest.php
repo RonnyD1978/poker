@@ -1,6 +1,8 @@
 <?php
-require_once("Achievement.php");
-require_once("CardCollection.php");
+$basePokerGameDir = __DIR__ . "/../";
+
+require_once($basePokerGameDir . "achievement/Achievement.php");
+require_once($basePokerGameDir . "CardCollection.php");
 
 class AchievementTest extends PHPUnit_Framework_TestCase
 {

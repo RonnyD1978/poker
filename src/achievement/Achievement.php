@@ -1,5 +1,5 @@
 <?php
-require_once("CardCollection.php");
+require_once($basePokerGameDir . "CardCollection.php");
 
 class Achievement
 {
