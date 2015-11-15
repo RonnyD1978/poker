@@ -2,10 +2,10 @@
 
 class CardSuit
 {
-    const SuitValueSpades = "S";
-    const SuitValueHearts = "H";
-    const SuitValueDiamonds = "D";
-    const SuitValueClubs = "C";
+    const Spades = "S";
+    const Hearts = "H";
+    const Diamonds = "D";
+    const Clubs = "C";
 
     /** @var string */
     private $suitValue;
@@ -22,6 +22,6 @@ class CardSuit
 
     public static function suits()
     {
-        return array(CardSuit::SuitValueSpades, CardSuit::SuitValueHearts, CardSuit::SuitValueDiamonds, CardSuit::SuitValueClubs);
+        return array(CardSuit::Spades, CardSuit::Hearts, CardSuit::Diamonds, CardSuit::Clubs);
     }
 }

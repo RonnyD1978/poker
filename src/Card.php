@@ -10,6 +10,12 @@ class Card
     /** @var CardSuit */
     private $suit;
 
+    public function __construct($rank = null, $suit = null)
+    {
+        $this->rank = new CardRank($rank);
+        $this->suit = new CardSuit($suit);
+    }
+
     public function rank()
     {
         return $this->rank;

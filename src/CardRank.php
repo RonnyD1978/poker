@@ -2,19 +2,19 @@
 
 class CardRank
 {
-    const CardRankValueTwo = "2";
-    const CardRankValueThree = "3";
-    const CardRankValueFour = "4";
-    const CardRankValueFive = "5";
-    const CardRankValueSix = "6";
-    const CardRankValueSeven = "7";
-    const CardRankValueEight = "8";
-    const CardRankValueNine = "9";
-    const CardRankValueTen = "T";
-    const CardRankValueJack = "J";
-    const CardRankValueQueen = "Q";
-    const CardRankValueKing = "K";
-    const CardRankValueAce = "A";
+    const Two = "2";
+    const Three = "3";
+    const Four = "4";
+    const Five = "5";
+    const Six = "6";
+    const Seven = "7";
+    const Eight = "8";
+    const Nine = "9";
+    const Ten = "T";
+    const Jack = "J";
+    const Queen = "Q";
+    const King = "K";
+    const Ace = "A";
 
     /** @var string */
     private $rankValue;
@@ -32,19 +32,19 @@ class CardRank
     public static function orderedRanks()
     {
         return array(
-            CardRank::CardRankValueTwo,
-            CardRank::CardRankValueThree,
-            CardRank::CardRankValueFour,
-            CardRank::CardRankValueFive,
-            CardRank::CardRankValueSix,
-            CardRank::CardRankValueSeven,
-            CardRank::CardRankValueEight,
-            CardRank::CardRankValueNine,
-            CardRank::CardRankValueTen,
-            CardRank::CardRankValueJack,
-            CardRank::CardRankValueQueen,
-            CardRank::CardRankValueKing,
-            CardRank::CardRankValueAce
+            CardRank::Two,
+            CardRank::Three,
+            CardRank::Four,
+            CardRank::Five,
+            CardRank::Six,
+            CardRank::Seven,
+            CardRank::Eight,
+            CardRank::Nine,
+            CardRank::Ten,
+            CardRank::Jack,
+            CardRank::Queen,
+            CardRank::King,
+            CardRank::Ace
         );
     }
 }

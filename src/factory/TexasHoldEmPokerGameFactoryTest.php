@@ -11,7 +11,7 @@ class TexasHoldEmPokerGameFactoryTest extends PHPUnit_Framework_TestCase
         $cardDeck = $texasHoldEmFactory->createCardDeck();
         $cards = $cardDeck->cards();
 
-        $this->assertEquals(sizeof($cards), 52);
+        $this->assertEquals(52, sizeof($cards));
     }
 
     public function testThatSpadesSuitCardsAreCreated()
@@ -25,13 +25,13 @@ class TexasHoldEmPokerGameFactoryTest extends PHPUnit_Framework_TestCase
 
         foreach ($cards as $card)
         {
-            if ($card->suit()->suitValue() == CardSuit::SuitValueSpades)
+            if ($card->suit()->suitValue() == CardSuit::Spades)
             {
                 $spadesSuit[$card->value()] = $card;
             }
         }
 
-        $this->assertEquals(sizeof($spadesSuit), 13);
+        $this->assertEquals(13, sizeof($spadesSuit));
     }
 
     public function testThatHeartsSuitCardsAreCreated()
@@ -45,13 +45,13 @@ class TexasHoldEmPokerGameFactoryTest extends PHPUnit_Framework_TestCase
 
         foreach ($cards as $card)
         {
-            if ($card->suit()->suitValue() == CardSuit::SuitValueHearts)
+            if ($card->suit()->suitValue() == CardSuit::Hearts)
             {
                 $heartsSuit[$card->value()] = $card;
             }
         }
 
-        $this->assertEquals(sizeof($heartsSuit), 13);
+        $this->assertEquals(13, sizeof($heartsSuit));
     }
 
     public function testThatDiamondsSuitCardsAreaCreated()
@@ -65,13 +65,13 @@ class TexasHoldEmPokerGameFactoryTest extends PHPUnit_Framework_TestCase
 
         foreach ($cards as $card)
         {
-            if ($card->suit()->suitValue() == CardSuit::SuitValueDiamonds)
+            if ($card->suit()->suitValue() == CardSuit::Diamonds)
             {
                 $diamondsSuit[$card->value()] = $card;
             }
         }
 
-        $this->assertEquals(sizeof($diamondsSuit), 13);
+        $this->assertEquals(13, sizeof($diamondsSuit));
     }
 
     public function testThatClubsSuitCardsAreCreated()
@@ -85,12 +85,12 @@ class TexasHoldEmPokerGameFactoryTest extends PHPUnit_Framework_TestCase
 
         foreach ($cards as $card)
         {
-            if ($card->suit()->suitValue() == CardSuit::SuitValueClubs)
+            if ($card->suit()->suitValue() == CardSuit::Clubs)
             {
                 $clubsSuit[$card->value()] = $card;
             }
         }
 
-        $this->assertEquals(sizeof($clubsSuit), 13);
+        $this->assertEquals(13, sizeof($clubsSuit));
     }
 }

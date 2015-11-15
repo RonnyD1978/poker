@@ -10,9 +10,7 @@ class CardCollectionTest extends PHPUnit_Framework_TestCase
     {
         $cardCollection = new CardCollection();
 
-        $card = new Card();
-        $card->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card);
 
         $this->assertEquals("AS", (string)$cardCollection);
@@ -22,14 +20,10 @@ class CardCollectionTest extends PHPUnit_Framework_TestCase
     {
         $cardCollection = new CardCollection();
 
-        $card1 = new Card();
-        $card1->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card1->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card1 = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card1);
 
-        $card2 = new Card();
-        $card2->setSuit(new CardSuit(CardSuit::SuitValueHearts));
-        $card2->setRank(new CardRank(CardRank::CardRankValueTwo));
+        $card2 = new Card(CardRank::Two, CardSuit::Hearts);
         $cardCollection->addCard($card2);
 
         $this->assertEquals("AS 2H", (string)$cardCollection);
@@ -39,14 +33,10 @@ class CardCollectionTest extends PHPUnit_Framework_TestCase
     {
         $cardCollection = new CardCollection();
 
-        $card1 = new Card();
-        $card1->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card1->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card1 = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card1);
 
-        $card2 = new Card();
-        $card2->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card2->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card2 = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card2);
 
         $this->assertEquals("AS", (string)$cardCollection);
@@ -56,14 +46,10 @@ class CardCollectionTest extends PHPUnit_Framework_TestCase
     {
         $cardCollection = new CardCollection();
 
-        $card1 = new Card();
-        $card1->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card1->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card1 = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card1);
 
-        $card2 = new Card();
-        $card2->setSuit(new CardSuit(CardSuit::SuitValueHearts));
-        $card2->setRank(new CardRank(CardRank::CardRankValueTwo));
+        $card2 = new Card(CardRank::Two, CardSuit::Hearts);
         $cardCollection->addCard($card2);
 
         $cardCollection->removeCard($card1);
@@ -76,9 +62,7 @@ class CardCollectionTest extends PHPUnit_Framework_TestCase
         //TODO: mock CardCollection
         $cardCollection = new CardCollection();
 
-        $card1 = new Card();
-        $card1->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card1->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card1 = new Card(CardRank::Ace, CardSuit::Spades);
         $cardCollection->addCard($card1);
 
         //verify that hasCard is invoked

@@ -9,20 +9,15 @@ class PairAchievementTest extends PHPUnit_Framework_TestCase
 {
     public function testThatPairUnlocks()
     {
-        $pair = new PairAchievement("Pair");
-
         $cards = new CardCollection();
 
-        $card1 = new Card();
-        $card1->setSuit(new CardSuit(CardSuit::SuitValueSpades));
-        $card1->setRank(new CardRank(CardRank::CardRankValueAce));
+        $card1 = new Card(CardRank::Ace, CardSuit::Spades);
         $cards->addCard($card1);
 
-        $card2 = new Card();
-        $card2->setSuit(new CardSuit(CardSuit::SuitValueHearts));
-        $card2->setRank(new CardRank(CardRank::CardRankValueAce));
-        $cards->addCard($card1);
+        $card2 = new Card(CardRank::Ace, CardSuit::Hearts);
+        $cards->addCard($card2);
 
+        $pair = new PairAchievement("Pair");
         $pair->setCards($cards);
 
         $this->assertTrue($pair->isUnlocked());

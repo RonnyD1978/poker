@@ -25,13 +25,11 @@ class TexasHoldEmPokerGameFactory implements PokerGameFactory
         $suits = CardSuit::suits();
         $ranks = CardRank::orderedRanks();
 
-        foreach ($suits as $suit)
+        foreach ($ranks as $rank)
         {
-            foreach ($ranks as $rank)
+            foreach ($suits as $suit)
             {
-                $card = new Card();
-                $card->setSuit(new CardSuit($suit));
-                $card->setRank(new CardRank($rank));
+                $card = new Card($rank, $suit);
 
                 $cardDeck->addCard($card);
             }
