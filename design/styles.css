@@ -1,0 +1,37 @@
+h1,h2
+{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.mark
+{
+    color: #ff3333;
+}
+
+th
+{
+    text-align: left;
+}
+
+th, td
+{
+    padding-left: 10px;
+    padding-right: 50px;
+}
+
+table
+{
+    margin-bottom: 20px;
+}
+
+table, td
+{
+    border:1px solid #999;
+    margin-left: 20px;
+}
+
+.note
+{
+    font-style: italic;
+}
