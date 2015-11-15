@@ -18,7 +18,7 @@ class PairAchievementTest extends PHPUnit_Framework_TestCase
         $cards->addCard($card2);
 
         $pair = new PairAchievement("Pair");
-        $pair->setCards($cards);
+        $pair->setHand($cards);
 
         $this->assertTrue($pair->isUnlocked());
     }

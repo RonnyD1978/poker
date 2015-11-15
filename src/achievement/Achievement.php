@@ -7,21 +7,21 @@ class Achievement
     protected$name;
 
     /** var CardCollection */
-    protected $cards;
+    protected $hand;
 
     public function __construct($name)
     {
         $this->name = $name;
     }
 
-    public function setCards(CardCollection $cards)
+    public function setHand(CardCollection $hand)
     {
-        $this->cards = $cards;
+        $this->hand = $hand;
     }
 
     public function isUnlocked()
     {
-        return isset($this->cards);
+        return isset($this->hand);
     }
 
     public function __toString()

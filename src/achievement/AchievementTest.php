@@ -17,8 +17,8 @@ class AchievementTest extends PHPUnit_Framework_TestCase
     {
         $achievement = new Achievement("achievement");
 
-        $cards = new CardCollection();
-        $achievement->setCards($cards);
+        $hand = new CardCollection();
+        $achievement->setHand($hand);
 
         $this->assertEquals("achievement unlocked", (string)$achievement);
     }

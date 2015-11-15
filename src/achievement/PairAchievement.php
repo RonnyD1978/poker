@@ -5,7 +5,7 @@ class PairAchievement extends Achievement
 {
     public function isUnlocked()
     {
-        $cards = $this->cards->cards();
+        $cards = $this->hand->cards();
 
         foreach($cards as $card)
         {
