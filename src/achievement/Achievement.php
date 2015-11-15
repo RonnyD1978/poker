@@ -4,10 +4,10 @@ require_once($basePokerGameDir . "CardCollection.php");
 class Achievement
 {
     /** var string */
-    private $name;
+    protected$name;
 
     /** var CardCollection */
-    private $cards;
+    protected $cards;
 
     public function __construct($name)
     {
