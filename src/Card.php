@@ -55,7 +55,7 @@ class Card
 
     public function equalsCard(Card $card)
     {
-        return $card->value() == $this->value();
+        return $this->rank->equalsRank($card->rank()) && $this->suit->equalsSuit($card->suit());
     }
 
     public function __toString()

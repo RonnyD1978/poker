@@ -29,6 +29,11 @@ class CardRank
         return $this->rankValue;
     }
 
+    public function equalsRank(CardRank $rank)
+    {
+        return $this->rankValue() == $rank->rankValue();
+    }
+
     public static function orderedRanks()
     {
         return array(

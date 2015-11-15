@@ -20,6 +20,11 @@ class CardSuit
         return $this->suitValue;
     }
 
+    public function equalsSuit(CardSuit $suit)
+    {
+        return $this->suitValue() == $suit->suitValue();
+    }
+
     public static function suits()
     {
         return array(CardSuit::Spades, CardSuit::Hearts, CardSuit::Diamonds, CardSuit::Clubs);

@@ -1,16 +1,15 @@
 <?php
 require_once($basePokerGameDir . "achievement/Achievement.php");
 
-class PairAchievement extends Achievement
+class FlushAchievement extends Achievement
 {
     public function isUnlocked()
     {
-        $cards = $this->hand->cards();
+        $cards = new CardCollectionSortedBySuit($this->hand->cards());
 
-        foreach($cards as $card)
-        {
+        $lowestSuit = $cards->getLowestSuit();
+        $highestSuit = $cards->getHighestSuit();
 
-        }
-        return false;
+        return $lowestSuit->equalsSuit($highestSuit);
     }
 }
