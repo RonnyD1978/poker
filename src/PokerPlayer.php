@@ -1,13 +1,13 @@
 <?php
 require_once("Card.php");
-require_once("SortedCardCollection.php");
+require_once("CardCollection.php");
 
 class PokerPlayer
 {
     /** @var string */
     private $name;
 
-    /** @var SortedCardCollection */
+    /** @var CardCollection */
     private $hand;
 
     public function __construct($name)

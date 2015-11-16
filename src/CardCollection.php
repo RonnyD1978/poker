@@ -57,6 +57,26 @@ class CardCollection
         return $this->cards;
     }
 
+    public function cardAtIndex($index)
+    {
+        return isset($this->cards[$index]) ? $this->cards[$index] : null;
+    }
+
+    public function firstCard()
+    {
+        return $this->cardAtIndex(0);
+    }
+
+    public function lastCard()
+    {
+        return $this->cardAtIndex($this->numberOfCards());
+    }
+
+    public function sortBy(CardSorter $sorter)
+    {
+        $this->cards = $sorter->sort($this->cards);
+    }
+
     public function __toString()
     {
         $cardValues = array();

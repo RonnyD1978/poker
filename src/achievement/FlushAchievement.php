@@ -1,15 +1,22 @@
 <?php
 require_once($basePokerGameDir . "achievement/Achievement.php");
+require_once($basePokerGameDir . "CardSuitSorter.php");
 
 class FlushAchievement extends Achievement
 {
     public function isUnlocked()
     {
-        $cards = new CardCollectionSortedBySuit($this->hand->cards());
+        $sorter = new CardSuitSorter();
+        $this->hand->sortBy($sorter);
 
-        $lowestSuit = $cards->getLowestSuit();
-        $highestSuit = $cards->getHighestSuit();
+        $lowestSuit = $this->hand->firstCard();
+        $highestSuit = $this->hand->lastCard();
 
-        return $lowestSuit->equalsSuit($highestSuit);
+        if (isset($lowestSuit) && isset($highestSuit))
+        {
+            return $lowestSuit->equalsSuit($highestSuit);
+        }
+
+        return false;
     }
 }
