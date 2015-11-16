@@ -13,7 +13,7 @@ $playerOne = new PokerPlayer("Black");
 $playerTwo = new PokerPlayer("White");
 $players = array($playerOne, $playerTwo);
 
-$result = $pokerGame->runAndGetResultFrom($players);
+$result = $pokerGame->startDeWagen($players);
 
 foreach ($result as $player)
 {

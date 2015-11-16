@@ -9,7 +9,7 @@ echo "<br/>";
 $pokerGameFactory = new EmptyPokerGameFactory();
 $pokerGame = $pokerGameFactory->createPokerGame();
 
-$result = $pokerGame->runAndGetResultFrom(array());
+$result = $pokerGame->startDeWagen(array());
 
 foreach ($result as $player)
 {

@@ -25,7 +25,7 @@ class PokerGame
         $this->achievements = $achievements;
     }
 
-    public function runAndGetResultFrom(array $players)
+    public function startDeWagen(array $players)
     {
         $this->dealCards($players);
 
