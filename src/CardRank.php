@@ -37,19 +37,19 @@ class CardRank
     public static function orderedRanks()
     {
         return array(
-            CardRank::Two,
-            CardRank::Three,
-            CardRank::Four,
-            CardRank::Five,
-            CardRank::Six,
-            CardRank::Seven,
-            CardRank::Eight,
-            CardRank::Nine,
-            CardRank::Ten,
-            CardRank::Jack,
-            CardRank::Queen,
-            CardRank::King,
-            CardRank::Ace
+            new CardRank(CardRank::Two),
+            new CardRank(CardRank::Three),
+            new CardRank(CardRank::Four),
+            new CardRank(CardRank::Five),
+            new CardRank(CardRank::Six),
+            new CardRank(CardRank::Seven),
+            new CardRank(CardRank::Eight),
+            new CardRank(CardRank::Nine),
+            new CardRank(CardRank::Ten),
+            new CardRank(CardRank::Jack),
+            new CardRank(CardRank::Queen),
+            new CardRank(CardRank::King),
+            new CardRank(CardRank::Ace)
         );
     }
 }

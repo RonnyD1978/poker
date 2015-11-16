@@ -9,12 +9,12 @@ class FlushAchievement extends Achievement
         $sorter = new CardSuitSorter();
         $this->hand->sortBy($sorter);
 
-        $lowestSuit = $this->hand->firstCard();
-        $highestSuit = $this->hand->lastCard();
+        $firstCard = $this->hand->firstCard();
+        $lastCard = $this->hand->lastCard();
 
-        if (isset($lowestSuit) && isset($highestSuit))
+        if (isset($firstCard) && isset($lastCard))
         {
-            return $lowestSuit->equalsSuit($highestSuit);
+            return $firstCard->suit()->equalsSuit($lastCard->suit());
         }
 
         return false;

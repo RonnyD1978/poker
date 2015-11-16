@@ -69,7 +69,7 @@ class CardCollection
 
     public function lastCard()
     {
-        return $this->cardAtIndex($this->numberOfCards());
+        return $this->cardAtIndex($this->numberOfCards() - 1);
     }
 
     public function sortBy(CardSorter $sorter)

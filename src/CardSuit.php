@@ -27,6 +27,11 @@ class CardSuit
 
     public static function orderedSuits()
     {
-        return array(CardSuit::Spades, CardSuit::Hearts, CardSuit::Diamonds, CardSuit::Clubs);
+        return array(
+            new CardSuit(CardSuit::Spades),
+            new CardSuit(CardSuit::Hearts),
+            new CardSuit(CardSuit::Diamonds),
+            new CardSuit(CardSuit::Clubs)
+        );
     }
 }

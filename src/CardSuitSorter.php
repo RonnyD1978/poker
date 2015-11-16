@@ -7,7 +7,7 @@ class CardSuitSorter implements CardSorter
 {
     public function sort(array $cards)
     {
-        $cards = array();
+        $sortedCards = array();
 
         $suits = CardSuit::orderedSuits();
 
@@ -15,13 +15,13 @@ class CardSuitSorter implements CardSorter
         {
             foreach($cards as $card)
             {
-                if ($card->suit().equalsSuit($suit))
+                if ($suit->equalsSuit($card->suit()))
                 {
-                    $this->sortedCards->addCard($card);
+                    $sortedCards[] = $card;
                 }
             }
         }
 
-        return $cards;
+        return $sortedCards;
     }
 }

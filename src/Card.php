@@ -12,8 +12,18 @@ class Card
 
     public function __construct($rank = null, $suit = null)
     {
-        $this->rank = new CardRank($rank);
-        $this->suit = new CardSuit($suit);
+        if (is_string($rank))
+        {
+            $rank = new CardRank($rank);
+        }
+
+        if (is_string($suit))
+        {
+            $suit = new CardSuit($suit);
+        }
+
+        $this->rank = $rank;
+        $this->suit = $suit;
     }
 
     public function rank()
