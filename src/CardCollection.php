@@ -1,5 +1,6 @@
 <?php
 require_once("Card.php");
+require_once("CardSorterInterface.php");
 
 class CardCollection
 {
@@ -19,6 +20,19 @@ class CardCollection
         }
     }
 
+    private function hasCard(Card $checkCard)
+    {
+        foreach ($this->cards as $card)
+        {
+            if ($checkCard->equalsCard($card))
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
     public function removeCard(Card $removeCard)
     {
         $newCards = array();
@@ -34,17 +48,9 @@ class CardCollection
         $this->cards = $newCards;
     }
 
-    private function hasCard(Card $checkCard)
+    public function removeAllCards()
     {
-        foreach ($this->cards as $card)
-        {
-            if ($checkCard->equalsCard($card))
-            {
-                return true;
-            }
-        }
-
-        return false;
+        $this->cards = array();
     }
 
     public function numberOfCards()
@@ -72,7 +78,7 @@ class CardCollection
         return $this->cardAtIndex($this->numberOfCards() - 1);
     }
 
-    public function sortBy(CardSorter $sorter)
+    public function sortBy(CardSorterInterface $sorter)
     {
         $this->cards = $sorter->sort($this->cards);
     }

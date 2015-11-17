@@ -5,7 +5,7 @@ require_once("PokerPlayer.php");
 
 class PokerGame
 {
-    /** @var CardCollection */
+    /** @var CardDeck */
     private $cardDeck;
 
     /** @var array */
@@ -27,25 +27,65 @@ class PokerGame
 
     public function startDeWagen(array $players)
     {
+        $this->resetCards($players);
+
+        $this->resetAchievements($players);
+
         $this->dealCards($players);
 
-        $orderedPlayers = $this->compareCards($players);
+        $this->checkCards($players);
+    }
 
-        return $orderedPlayers;
+    private function resetCards(array $players)
+    {
+        foreach ($players as $player)
+        {
+            $player->resetCards();
+        }
+    }
+
+    private function resetAchievements(array $players)
+    {
+        foreach ($players as $player)
+        {
+            $player->resetAchievementUnlocked();
+        }
     }
 
     private function dealCards(array $players)
     {
-        foreach($players as $player)
+        foreach ($players as $player)
         {
-//            $player->addCard($cardDeck->takeCard($this->numberOfInitialCards());
+            for($i = 0; $i < $this->getNumberOfCardsPerPlayer(); $i++)
+            {
+                $player->addCard($this->cardDeck->randomCard());
+            }
         }
     }
 
-    private function compareCards(array $players)
+    private function getNumberOfCardsPerPlayer()
     {
-        $orderedPlayers = $players;
+        return 5;
+    }
 
-        return $orderedPlayers;
+    private function checkCards(array $players)
+    {
+        foreach ($players as $player)
+        {
+            $this->checkCard($player);
+        }
+    }
+
+    private function checkCard(PokerPlayer $player)
+    {
+        foreach ($this->achievements as $achievement)
+        {
+            $achievement->setHand($player->hand());
+
+            if ($achievement->isUnlocked())
+            {
+                $player->setAchievementUnlocked($achievement);
+            }
+        }
     }
 }

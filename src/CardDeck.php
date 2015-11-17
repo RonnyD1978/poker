@@ -3,8 +3,8 @@ require_once("CardCollection.php");
 
 class CardDeck extends CardCollection
 {
-    public function getRandomCard()
+    public function randomCard()
     {
-        return array_rand($this->cards());
+        return $this->cardAtIndex(array_rand($this->cards()));
     }
 }

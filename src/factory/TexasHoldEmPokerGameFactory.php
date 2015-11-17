@@ -4,6 +4,8 @@ require_once($basePokerGameDir . "Card.php");
 require_once($basePokerGameDir . "CardDeck.php");
 require_once($basePokerGameDir . "CardSuit.php");
 require_once($basePokerGameDir . "CardRank.php");
+require_once($basePokerGameDir . "achievement/FlushAchievement.php");
+require_once($basePokerGameDir . "achievement/PairAchievement.php");
 
 class TexasHoldEmPokerGameFactory implements PokerGameFactory
 {
@@ -31,6 +33,10 @@ class TexasHoldEmPokerGameFactory implements PokerGameFactory
                 $card = new Card($rank, $suit);
 
                 $cardDeck->addCard($card);
+
+                //TODO: remove
+                break;
+
             }
         }
 
@@ -39,6 +45,10 @@ class TexasHoldEmPokerGameFactory implements PokerGameFactory
 
     public function createAchievements()
     {
-        return array();
+        $achievements = array();
+        $achievements[] = new FlushAchievement("Flush");
+        $achievements[] = new PairAchievement("Pair");
+
+        return $achievements;
     }
 }

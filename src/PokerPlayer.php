@@ -1,6 +1,7 @@
 <?php
 require_once("Card.php");
 require_once("CardCollection.php");
+require_once("achievement/Achievement.php");
 
 class PokerPlayer
 {
@@ -10,10 +11,13 @@ class PokerPlayer
     /** @var CardCollection */
     private $hand;
 
+    /** @var Achievement */
+    private $achievementUnlocked;
+
     public function __construct($name)
     {
         $this->name = $name;
-        $this->cards = array();
+        $this->hand = new CardCollection();
     }
 
     public function name()
@@ -21,18 +25,45 @@ class PokerPlayer
         return $this->name;
     }
 
-    public function cards()
+    public function hand()
     {
-        return $this->cards;
+        return $this->hand;
     }
 
     public function addCard(Card $card)
     {
-        $this->cards[] = $card;
+        $this->hand->addCard($card);
+    }
+
+    public function resetCards()
+    {
+        $this->hand = new CardCollection();
+    }
+
+    public function resetAchievementUnlocked()
+    {
+        $this->achievement = null;
+    }
+
+    public function setAchievementUnlocked(Achievement $achievement)
+    {
+        $this->achievement = $achievement;
     }
 
     public function __toString()
     {
-        return $this->name;
+        $result = $this->name;
+
+        if ($this->hand->numberOfCards() > 0)
+        {
+            $result .= " ";
+            $result .= (string)$this->hand;
+        }
+
+        if (isset($this->achievementUnlocked))
+        {
+            $result .= " " . $this->achievementUnlocked;
+        }
+        return $result;
     }
 }

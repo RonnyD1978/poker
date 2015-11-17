@@ -13,9 +13,9 @@ $playerOne = new PokerPlayer("Black");
 $playerTwo = new PokerPlayer("White");
 $players = array($playerOne, $playerTwo);
 
-$result = $pokerGame->startDeWagen($players);
+$pokerGame->startDeWagen($players);
 
-foreach ($result as $player)
+foreach ($players as $player)
 {
     echo $player;
     echo "<br/>";
