@@ -7,6 +7,7 @@ class FlushAchievement extends Achievement
     public function isUnlocked()
     {
         $sorter = new CardSuitSorter();
+
         $this->hand->sortBy($sorter);
 
         $firstCard = $this->hand->firstCard();
