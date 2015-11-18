@@ -72,11 +72,11 @@ class PokerGame
     {
         foreach ($players as $player)
         {
-            $this->checkCard($player);
+            $this->checkCardsForPlayer($player);
         }
     }
 
-    private function checkCard(PokerPlayer $player)
+    private function checkCardsForPlayer(PokerPlayer $player)
     {
         foreach ($this->achievements as $achievement)
         {
