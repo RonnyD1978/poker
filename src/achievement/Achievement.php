@@ -4,7 +4,7 @@ require_once($basePokerGameDir . "CardCollection.php");
 class Achievement
 {
     /** var string */
-    protected$name;
+    protected $name;
 
     /** var CardCollection */
     protected $hand;
