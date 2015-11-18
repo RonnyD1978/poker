@@ -21,7 +21,7 @@ class Achievement
 
     public function isUnlocked()
     {
-        return isset($this->hand);
+        return false;
     }
 
     public function __toString()
